@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ComicCard from './components/ComicCard/ComicCard.js';
 
 const baseURL = "https://gateway.marvel.com:443/v1/public/"
-const APIKey = ""
+const APIKey = "6ac68c640e567a0be876ac9a65ba411f"
 
 // console.log(APIKey);
 // console.log(baseURL + APIKey);
