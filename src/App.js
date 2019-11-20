@@ -30,7 +30,7 @@ function App() {
       <Form inline>
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
           <Label for="exampleSearch" className="mr-sm-2">Your Comic</Label>
-          <Input type="searc" name="search" id="exampleSearch" onChange={(e) => setSearch(e.target.value)} />
+          <Input type="search" name="search" id="exampleSearch" onChange={(e) => setSearch(e.target.value)} />
         </FormGroup>
         <Button 
           onClick={(e) => Excelsior(e)}
