@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ComicCard.module.css';
 
-const ComicCard = () => (
+const ComicCard = (props) => (
   <div className={styles.ComicCard}>
     ComicCard Component
   </div>

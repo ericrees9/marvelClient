@@ -36,11 +36,13 @@ function App() {
           onClick={(e) => Excelsior(e)}
         >Excelsior!</Button>
       </Form>
-      {comics.map((comic, index) => {
-        return(
-          <ComicCard comicData={comic}>{comic.data.results.title}</ComicCard>
-        )
-      })}
+      <div>
+        {comics.map((comic, index) => {
+          return(
+            <ComicCard comicData={comic}>{comic.data.results.title}</ComicCard>
+          )
+        })}
+      </div>
     </div>
   );
 }
