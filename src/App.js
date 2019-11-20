@@ -20,7 +20,7 @@ function App() {
   
     fetch(url)
       .then(res => res.json())
-      .then(res => {setComics(res); console.log(res)})
+      .then(res => {setComics(res.data.results); console.log(comics)})
       .catch(err => console.error({ message: err }))
   }
 
@@ -39,7 +39,7 @@ function App() {
       <div>
         {comics.map((comic, index) => {
           return(
-            <ComicCard comicData={comic}>{comic.data.results.title}</ComicCard>
+            <ComicCard comicData={comic}>{comic.title}</ComicCard>
           )
         })}
       </div>

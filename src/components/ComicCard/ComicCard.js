@@ -5,6 +5,7 @@ import styles from './ComicCard.module.css';
 const ComicCard = (props) => (
   <div className={styles.ComicCard}>
     ComicCard Component
+    {props.comicData.title}
   </div>
 );
 
