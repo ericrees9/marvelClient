@@ -8,7 +8,7 @@ import TestData from '../src/testData.js';
 
 const baseURL = "https://gateway.marvel.com:443/v1/public/"
 const APIKey = "6ac68c640e567a0be876ac9a65ba411f"
-let COMIC_ROUTE = "/comicpage/:comicId/"
+let COMIC_ROUTE = "/comicpage/:comicId"
 
 // console.log(APIKey);
 // console.log(baseURL + APIKey);
