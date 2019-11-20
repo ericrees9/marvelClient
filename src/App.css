@@ -3,11 +3,17 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  align-content: center;
+}
+
+.Header {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .ResultsArea {
-  width: 90vw;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

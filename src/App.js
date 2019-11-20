@@ -30,16 +30,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Marvel Comic Book Search</h1>
-      <Form inline>
-        <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-          <Label for="exampleSearch" className="mr-sm-2">Your Comic</Label>
-          <Input type="search" name="search" id="exampleSearch" onChange={(e) => setSearch(e.target.value)} />
-        </FormGroup>
-        <Button 
-          onClick={(e) => Excelsior(e)}
-        >Excelsior!</Button>
-      </Form>
+      <div className="Header">
+        <h1>Marvel Comic Book Search</h1>
+        <Form>
+          <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+            <Label for="exampleSearch" className="mr-sm-2">Your Comic</Label>
+            <Input type="search" name="search" id="exampleSearch" onChange={(e) => setSearch(e.target.value)} />
+          </FormGroup>
+          <Button onClick={(e) => Excelsior(e)}>Excelsior!</Button>
+        </Form>
+      </div>
       <div className="ResultsArea">
         {comics.map((comic, index) => {
           return(
