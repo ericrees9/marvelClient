@@ -1,8 +1,10 @@
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .ResultsArea {
+  width: 85vw;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
