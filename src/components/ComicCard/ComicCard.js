@@ -13,7 +13,6 @@ const ComicCard = (props) => (
         <CardBody>
           <CardTitle><h2>{props.comicData.title}</h2></CardTitle>
           <CardText><p>{props.comicData.description}</p></CardText>
-          <Button>Read More</Button>
         </CardBody>
       </Card>
   </div>
