@@ -2,11 +2,12 @@
   text-align: center;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .ResultsArea {
-  width: 85vw;
+  width: 90vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
