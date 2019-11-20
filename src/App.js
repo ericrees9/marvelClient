@@ -20,7 +20,7 @@ function App() {
   
     fetch(url)
       .then(res => res.json())
-      .then(res => {setComics(res.data.results); console.log(comics)})
+      .then(res => {setComics(res.data.results); console.log(res)})
       .catch(err => console.error({ message: err }))
   }
 
