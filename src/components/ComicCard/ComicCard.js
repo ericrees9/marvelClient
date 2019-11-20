@@ -6,7 +6,7 @@ import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button } from 'reacts
 const ComicCard = (props) => (
   <div className={styles.ComicCard}>
     <Card>
-        <CardImg top width="100%" src={`${props.comicData.images[0].path}.jpg`} alt="Card image cap" />
+        <CardImg top width="100%" src={`${props.comicData.images.path}.jpg`} alt="Card image cap" />
         <CardBody>
           <CardTitle>{props.comicData.title}</CardTitle>
           <CardSubtitle>{props.comicData.series.name}</CardSubtitle>
