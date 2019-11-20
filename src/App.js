@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ComicCard from './components/ComicCard/ComicCard.js';
+import TestData from '../src/testData.js';
 
 const baseURL = "https://gateway.marvel.com:443/v1/public/"
 const APIKey = "6ac68c640e567a0be876ac9a65ba411f"
@@ -12,16 +13,19 @@ const APIKey = "6ac68c640e567a0be876ac9a65ba411f"
 function App() {
   const [search, setSearch] = useState("");
   const [comics, setComics] = useState([]);
+
+  console.log(TestData);
   
   const Excelsior = (e) => {
-    e.preventDefault();
-    let url = `${baseURL}comics?title=${search}&apikey=${APIKey}`;
-    console.log(search)
+    // e.preventDefault();
+    // let url = `${baseURL}comics?title=${search}&apikey=${APIKey}`;
+    // console.log(search)
   
-    fetch(url)
-      .then(res => res.json())
-      .then(res => {setComics(res.data.results); console.log(res)})
-      .catch(err => console.error({ message: err }))
+    // fetch(url)
+    //   .then(res => res.json())
+    //   .then(res => {setComics(res.data.results); console.log(res)})
+    //   .catch(err => console.error({ message: err }))
+    setComics(TestData.data.results);
   }
 
   return (
