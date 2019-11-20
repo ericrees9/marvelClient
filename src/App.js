@@ -11,6 +11,7 @@ const APIKey = "6ac68c640e567a0be876ac9a65ba411f"
 
 function App() {
   const [search, setSearch] = useState("");
+  const [comics, setComics] = useState([]);
   
   const Excelsior = (e) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ function App() {
   
     fetch(url)
       .then(res => res.json())
-      .then(res => console.log(res))
+      .then(res => {setComics(res); console.log(res)})
       .catch(err => console.error({ message: err }))
   }
 
@@ -35,7 +36,11 @@ function App() {
           onClick={(e) => Excelsior(e)}
         >Excelsior!</Button>
       </Form>
-      <ComicCard></ComicCard>
+      {comics.map((comic, index) => {
+        return(
+          <ComicCard comicData={comic}>{comic.data.results.title}</ComicCard>
+        )
+      })}
     </div>
   );
 }
