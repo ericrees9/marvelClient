@@ -36,9 +36,9 @@ function App() {
     <Switch>
       <Route exact path="/">
         <div className="App">
+        <h1>Marvel Comic Book Search</h1>
           <div className="Header">
-            <h1>Marvel Comic Book Search</h1>
-            <Form>
+            <Form inline>
               <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                 <Label for="exampleSearch" className="mr-sm-2">Your Comic</Label>
                 <Input type="search" name="search" id="exampleSearch" onChange={(e) => setSearch(e.target.value)} />

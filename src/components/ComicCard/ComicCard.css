@@ -2,4 +2,6 @@
     width: 20vw;
     display: flex;
     margin: 1em;
+    border: 2px solid black;
+    background: lightgray;
 }

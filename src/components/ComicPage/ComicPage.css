@@ -1,0 +1,40 @@
+.main {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    padding: 2em;
+}
+
+.resultsArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.img {
+    border: 2px solid black;
+    background: lightgray;
+    width: 50vw;
+}
+
+.left {
+    display: flex;
+    flex-grow: 1;
+    padding: 2em;
+    justify-content: center;
+    max-width: 50vw;
+}
+
+.right {
+    display: flex;
+    flex-grow: 1;
+    padding: 2em;
+    max-width: 50vw;
+}
+
+.listArea {
+    width: 50vw;
+}

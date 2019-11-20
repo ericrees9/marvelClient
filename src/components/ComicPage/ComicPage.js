@@ -1,6 +1,8 @@
 import React, { useState, useLayoutEffect } from 'react';
-import PropTypes from 'prop-types';
-import styles from './ComicPage.module.css';
+import './ComicPage.css';
+import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+import IndvTestData from '../../individualTestData';
+import moment from 'moment';
 
 const ComicPage = (props) => {
   const [ singleComic, setSingleComic ] = useState([]);
@@ -12,25 +14,71 @@ const ComicPage = (props) => {
   
   const fetchComic = () => {
     let uuid = (window.location.pathname).slice(11)
-    console.log(uuid);
+    // console.log(uuid);
     let url = "https://gateway.marvel.com:443/v1/public/comics/" + uuid + "?apikey=6ac68c640e567a0be876ac9a65ba411f"
 
-    fetch(url)
-      .then(res => res.json())
-      .then(res => {setSingleComic(res); console.log(res)})
-      .catch(err => console.error({ message: err })) 
+    // fetch(url)
+    //   .then(res => res.json())
+    //   .then(res => {setSingleComic(res); console.log(res)})
+    //   .catch(err => console.error({ message: err })) 
+    setSingleComic(IndvTestData.data.results)
+    console.log(IndvTestData.data.results[0].images[0])
 }
 
   return(
-    <div className={styles.ComicPage}>
-      Hello this is the Comic Page!
+    <div className="main">
+      <h1>{IndvTestData.data.results[0].title}</h1>
+      <div className="resultsArea">
+        <div className="left">
+          <img className="img" src={`${IndvTestData.data.results[0].images[0].path}.jpg`} />
+        </div>
+        <div className="right">
+          <ListGroup className="listArea">
+            <ListGroupItem>
+              <ListGroupItemHeading>Created By</ListGroupItemHeading>
+                <ListGroupItemText>
+                {IndvTestData.data.results[0].creators.items[0].name}
+                </ListGroupItemText>
+            </ListGroupItem>
+            <ListGroupItem>
+              <ListGroupItemHeading>Description</ListGroupItemHeading>
+                <ListGroupItemText>
+                {IndvTestData.data.results[0].description}
+                </ListGroupItemText>
+            </ListGroupItem>
+            <ListGroupItem>
+              <ListGroupItemHeading>On Sale Date</ListGroupItemHeading>
+                <ListGroupItemText>
+                {moment(IndvTestData.data.results[0].dates[0].date).format("MMMM Do YYYY")}
+                </ListGroupItemText>
+            </ListGroupItem>
+            <ListGroupItem>
+              <ListGroupItemHeading>Original Print Price</ListGroupItemHeading>
+                <ListGroupItemText>
+                ${IndvTestData.data.results[0].prices[0].price}
+                </ListGroupItemText>
+            </ListGroupItem>
+            <ListGroupItem>
+              <ListGroupItemHeading>Pages</ListGroupItemHeading>
+                <ListGroupItemText>
+                {IndvTestData.data.results[0].pageCount}
+                </ListGroupItemText>
+            </ListGroupItem>
+            <ListGroupItem>
+              <ListGroupItemHeading><a target="_blank" href={`${IndvTestData.data.results[0].urls[0].url}`}>More Details</a></ListGroupItemHeading>
+            </ListGroupItem>
+            <ListGroupItem>
+              <ListGroupItemHeading><a target="_blank" href={`${IndvTestData.data.results[0].urls[1].url}`}>Buy Now</a></ListGroupItemHeading>
+            </ListGroupItem>
+            <ListGroupItem>
+              <ListGroupItemHeading><a target="_blank" href={`${IndvTestData.data.results[0].urls[0].url}`}>Back to Search</a></ListGroupItemHeading>
+            </ListGroupItem>
+          </ListGroup>
+        </div>
+      </div>
     </div>
   );
 
 };
-
-ComicPage.propTypes = {};
-
-ComicPage.defaultProps = {};
 
 export default ComicPage;
