@@ -36,7 +36,7 @@ function App() {
           onClick={(e) => Excelsior(e)}
         >Excelsior!</Button>
       </Form>
-      <div>
+      <div className="ResultsArea">
         {comics.map((comic, index) => {
           return(
             <ComicCard comicData={comic}>{comic.title}</ComicCard>

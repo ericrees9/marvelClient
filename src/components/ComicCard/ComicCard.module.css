@@ -1,3 +1,4 @@
 .ComicCard {
     width: 20vw;
+    display: flex;
 }
