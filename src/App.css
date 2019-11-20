@@ -6,7 +6,7 @@
 .ResultsArea {
   width: 85vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
