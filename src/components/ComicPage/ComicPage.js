@@ -6,7 +6,7 @@ import IndvTestData from '../../individualTestData';
 import moment from 'moment';
 
 const ComicPage = (props) => {
-  const [ singleComic, setSingleComic ] = useState([]);
+  const [ singleComic, setSingleComic ] = useState({});
   const [ isLoading, setIsLoading ] = useState(false);
 
   useEffect(() => {
@@ -31,11 +31,11 @@ const ComicPage = (props) => {
   return isLoading ? <div>Loading</div> : (
       <div className="main">
         <h1 className="comicTitle">{singleComic.title}</h1>
-        {/* <div className="resultsArea">
+        <div className="resultsArea">
           <div className="left">
             <img className="img" src={`${singleComic.images[0].path}.jpg`} />
           </div>
-          <div className="right">
+          {/* <div className="right">
             <ListGroup className="listArea">
               <ListGroupItem>
                 <ListGroupItemHeading>Created By</ListGroupItemHeading>
@@ -77,8 +77,8 @@ const ComicPage = (props) => {
                 <ListGroupItemHeading><Link to="/">Back to Search</Link></ListGroupItemHeading>
               </ListGroupItem>
             </ListGroup>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div>
   );
 };
