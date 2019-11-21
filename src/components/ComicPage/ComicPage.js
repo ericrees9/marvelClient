@@ -20,7 +20,7 @@ const ComicPage = (props) => {
 
     fetch(url)
       .then(res => res.json())
-      .then(res => {setSingleComic(res.data.results[0]); console.log(res.data.results[0])})
+      .then(res => {setSingleComic(res); console.log(res)})
       .then(setIsLoading(false))
       .catch(err => console.error({ message: err })) 
     // setSingleComic(IndvTestData.data.results)
