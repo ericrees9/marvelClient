@@ -33,7 +33,9 @@ const ComicPage = (props) => {
     // console.log(IndvTestData.data.results[0].images[0])
   }
 
-  if (isLoading) <div>Loading...</div>;
+  if (isLoading) {
+    return ( <div>Loading...</div> );
+  }
   return (
       <div className="main">
         {console.log(singleComic)}
