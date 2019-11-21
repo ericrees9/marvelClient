@@ -20,7 +20,7 @@ const ComicPage = (props) => {
 
     fetch(url)
       .then(res => res.json())
-      .then(res => {setSingleComic(res.data.results[0]); console.log(res.data.results[0])})
+      .then(res => {setSingleComic(res.data.results[0]); console.log(singleComic)})
       .then(setIsLoading(false))
       .catch(err => console.error({ message: err })) 
     // setSingleComic(IndvTestData.data.results)
@@ -30,7 +30,7 @@ const ComicPage = (props) => {
   return isLoading ? <div>Loading</div> : (
       <div className="main">
         {console.log(singleComic)}
-        {/* <h1 className="comicTitle">{singleComic.title}</h1>
+        <h1 className="comicTitle">{singleComic.title}</h1>
         <div className="resultsArea">
           <div className="left">
             <img className="img" src={`${singleComic.images[0].path}.jpg`} />
@@ -78,7 +78,7 @@ const ComicPage = (props) => {
               </ListGroupItem>
             </ListGroup>
           </div>
-        </div> */}
+        </div>
       </div>
   );
 };
