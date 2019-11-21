@@ -35,14 +35,13 @@ const ComicPage = (props) => {
     //   .catch(err => console.error({ message: err })) 
     // setSingleComic(IndvTestData.data.results)
     // console.log(IndvTestData.data.results[0].images[0])
-  }
+
 
   // if (isLoading) {
   //   return ( <div>Loading...</div> );
   // }
   return (
       <div className="main">
-        {/* {console.log(singleComic)} */}
         <h1 className="comicTitle">{comic.title}</h1>
         <div className="resultsArea">
           <div className="left">
