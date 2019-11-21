@@ -18,7 +18,7 @@ const ComicPage = (props) => {
     // }
   }, [])
   
-  console.log(props.location.state.data);
+  console.log(props.location.state.comic);
 
   const fetchComic = () => {
     const uuid = (window.location.pathname).slice(11)
