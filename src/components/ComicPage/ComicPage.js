@@ -20,7 +20,7 @@ const ComicPage = (props) => {
 
     fetch(url)
       .then(res => res.json())
-      .then(res => {setSingleComic(res); console.log(res)})
+      .then(res => {setSingleComic(res.data.results[0]); console.log(res.data.results[0])})
       .catch(err => console.error({ message: err })) 
     // setSingleComic(IndvTestData.data.results)
     // console.log(IndvTestData.data.results[0].images[0])
@@ -28,7 +28,7 @@ const ComicPage = (props) => {
 
   return(
     <div className="main">
-      {/* <h1 className="comicTitle">{singleComic.data.results.title}</h1>
+      {/* <h1 className="comicTitle">{singleComic.data.results[0].title}</h1>
       <div className="resultsArea">
         <div className="left">
           <img className="img" src={`${singleComic.data.results[0].images[0].path}.jpg`} />
