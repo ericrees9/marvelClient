@@ -6,7 +6,7 @@ import IndvTestData from '../../individualTestData';
 import moment from 'moment';
 
 const ComicPage = (props) => {
-  const [ singleComic, setSingleComic ] = useState(null);
+  const [ singleComic, setSingleComic ] = useState([]);
   const [ isLoading, setIsLoading ] = useState(false);
 
   useEffect(() => {
