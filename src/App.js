@@ -36,14 +36,14 @@ function App() {
     <Switch>
       <Route exact path="/">
         <div className="App">
-        <h1>Marvel Comic Book Search</h1>
+        <h1 className="bigHeader">Marvel Comic Book Search</h1>
           <div className="Header">
             <Form inline>
               <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                <Label for="exampleSearch" className="mr-sm-2">Your Comic</Label>
+                <Label for="exampleSearch" className="mr-sm-2">Which hero are you looking for?</Label>
                 <Input type="search" name="search" id="exampleSearch" onChange={(e) => setSearch(e.target.value)} />
               </FormGroup>
-              <Button onClick={(e) => Excelsior(e)}>Excelsior!</Button>
+              <Button color="secondary" onClick={(e) => Excelsior(e)}>Excelsior!</Button>
             </Form>
           </div>
           <div className="ResultsArea">

@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react';
 import './ComicPage.css';
 import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import IndvTestData from '../../individualTestData';
 import moment from 'moment';
 
@@ -22,12 +23,12 @@ const ComicPage = (props) => {
     //   .then(res => {setSingleComic(res); console.log(res)})
     //   .catch(err => console.error({ message: err })) 
     setSingleComic(IndvTestData.data.results)
-    console.log(IndvTestData.data.results[0].images[0])
+    // console.log(IndvTestData.data.results[0].images[0])
 }
 
   return(
     <div className="main">
-      <h1>{IndvTestData.data.results[0].title}</h1>
+      <h1 className="comicTitle">{IndvTestData.data.results[0].title}</h1>
       <div className="resultsArea">
         <div className="left">
           <img className="img" src={`${IndvTestData.data.results[0].images[0].path}.jpg`} />
@@ -71,7 +72,7 @@ const ComicPage = (props) => {
               <ListGroupItemHeading><a target="_blank" href={`${IndvTestData.data.results[0].urls[1].url}`}>Buy Now</a></ListGroupItemHeading>
             </ListGroupItem>
             <ListGroupItem>
-              <ListGroupItemHeading><a target="_blank" href={`${IndvTestData.data.results[0].urls[0].url}`}>Back to Search</a></ListGroupItemHeading>
+              <ListGroupItemHeading><Link to="/">Back to Search</Link></ListGroupItemHeading>
             </ListGroupItem>
           </ListGroup>
         </div>

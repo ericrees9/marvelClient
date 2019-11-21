@@ -6,6 +6,7 @@
     align-items: stretch;
     text-align: center;
     padding: 2em;
+    background-color: #ed1d24;;
 }
 
 .resultsArea {
@@ -37,4 +38,9 @@
 
 .listArea {
     width: 50vw;
+}
+
+.comicTitle {
+    font-family: Bangers;
+    font-size: 4em;
 }

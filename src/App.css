@@ -1,9 +1,11 @@
 .App {
   text-align: center;
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-content: center;
+  background-color: #ed1d24;
 }
 
 .Header {
@@ -11,6 +13,7 @@
   flex-direction: column;
   align-items: center;
   margin: 1em;
+  background-color: #ed1d24;
 }
 
 .ResultsArea {
@@ -20,6 +23,7 @@
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+  background-color: #ed1d24;
 }
 
 .App-logo {
@@ -39,4 +43,9 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.bigHeader {
+  font-family: Bangers;
+  font-size: 8em;
 }
