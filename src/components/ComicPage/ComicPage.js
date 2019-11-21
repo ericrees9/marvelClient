@@ -19,13 +19,15 @@ const ComicPage = (props) => {
   }, [])
   
   const fetchComic = () => {
-    let uuid = (window.location.pathname).slice(11)
-    let url = "https://gateway.marvel.com:443/v1/public/comics/" + uuid + "?apikey=6ac68c640e567a0be876ac9a65ba411f"
+    const uuid = (window.location.pathname).slice(11)
+    const url = "https://gateway.marvel.com:443/v1/public/comics/" + uuid + "?apikey=6ac68c640e567a0be876ac9a65ba411f"
 
     fetch(url, { signal: signal })
-      .then(res => res.json())
-      .then(res => {setSingleComic(res.data.results[0]); console.log(singleComic)})
-      .then(setIsLoading(false))
+      .then(res => {
+         res.json();
+         setSingleComic(res.data.results[0]);
+         setIsLoading(false)
+      })
       .catch(err => console.error({ message: err })) 
     // setSingleComic(IndvTestData.data.results)
     // console.log(IndvTestData.data.results[0].images[0])
@@ -34,7 +36,7 @@ const ComicPage = (props) => {
   return isLoading === true ? ( <div>Loading...</div> ) : (
       <div className="main">
         {console.log(singleComic)}
-        {/* <h1 className="comicTitle">{singleComic.title}</h1>
+        <h1 className="comicTitle">{singleComic.title}</h1>
         <div className="resultsArea">
           <div className="left">
             <img className="img" src={`${singleComic.images[0].path}.jpg`} />
@@ -82,7 +84,7 @@ const ComicPage = (props) => {
               </ListGroupItem>
             </ListGroup>
           </div>
-        </div> */}
+        </div>
       </div>
   );
 };
