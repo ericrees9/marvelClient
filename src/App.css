@@ -47,5 +47,7 @@
 
 .bigHeader {
   font-family: Bangers;
+  color: #f0e95e;
   font-size: 8em;
+  -webkit-text-stroke: 2px black;
 }

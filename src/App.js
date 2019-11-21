@@ -43,7 +43,7 @@ function App() {
                 <Label for="exampleSearch" className="mr-sm-2">Which hero are you looking for?</Label>
                 <Input type="search" name="search" id="exampleSearch" onChange={(e) => setSearch(e.target.value)} />
               </FormGroup>
-              <Button color="secondary" onClick={(e) => Excelsior(e)}>Excelsior!</Button>
+              <Button color="warning" onClick={(e) => Excelsior(e)}>Excelsior!</Button>
             </Form>
           </div>
           <div className="ResultsArea">
