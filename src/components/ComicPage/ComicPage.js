@@ -79,9 +79,9 @@ const ComicPage = (props) => {
                   {comic.pageCount}
                   </ListGroupItemText>
               </ListGroupItem>
-              <ListGroupItem>
+              {`${comic.urls[0].url}` === null ? null : <ListGroupItem>
                 <ListGroupItemHeading><a target="_blank" href={`${comic.urls[0].url}`}>More Details</a></ListGroupItemHeading>
-              </ListGroupItem>
+              </ListGroupItem>}
               {`${comic.urls[1].url}` === null ? null : <ListGroupItem>
                 <ListGroupItemHeading><a target="_blank" href={`${comic.urls[1].url}`}>Buy Now</a></ListGroupItemHeading>
               </ListGroupItem>}
