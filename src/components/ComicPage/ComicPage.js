@@ -31,9 +31,9 @@ const ComicPage = (props) => {
   return isLoading ? <div>Loading</div> : (
       <div className="main">
         <h1 className="comicTitle">{singleComic.title}</h1>
-        <div className="resultsArea">
+        {/* <div className="resultsArea">
           <div className="left">
-            {/* <img className="img" src={`${singleComic.images[0].path}.jpg`} /> */}
+            <img className="img" src={`${singleComic.images[0].path}.jpg`} />
           </div>
           <div className="right">
             <ListGroup className="listArea">
@@ -78,7 +78,7 @@ const ComicPage = (props) => {
               </ListGroupItem>
             </ListGroup>
           </div>
-        </div>
+        </div> */}
       </div>
   );
 };
