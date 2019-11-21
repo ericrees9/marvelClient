@@ -31,7 +31,7 @@ const ComicPage = (props) => {
     // console.log(IndvTestData.data.results[0].images[0])
   }
 
-  return isLoading === true ? <div>Loading...</div> : (
+  return isLoading === true ? ( <div>Loading...</div> ) : (
       <div className="main">
         {console.log(singleComic)}
         {/* <h1 className="comicTitle">{singleComic.title}</h1>
