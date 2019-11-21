@@ -49,7 +49,7 @@ function App() {
           <div className="ResultsArea">
             {comics.map((comic, index) => {
               return(
-                <Link to={{ pathname: COMIC_ROUTE.replace(':comicID', `${comic.id}`), state: { comic } }}>
+                <Link to={{pathname: COMIC_ROUTE.replace(':comicID', `${comic.id}`), state: { comic }}}>
                   <ComicCard comicData={comic}>{comic.title}</ComicCard>
                 </Link>
               )
@@ -57,7 +57,7 @@ function App() {
           </div>
         </div>
         </Route>
-        <Route path="/comicpage" component={ComicPage}><ComicPage comicData={comics} /></Route>
+        <Route path="/comicpage" component={ComicPage} render={routerProps => (<ComicPage {...routerProps}/> )}/>
     </Switch>
     </Router>
   );
