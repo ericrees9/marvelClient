@@ -11,14 +11,18 @@ const ComicPage = (props) => {
 
   useEffect(() => {
     fetchComic();
+    return function cleanup() {
+      abortController.abort()
+    }
   }, [])
   
   const fetchComic = () => {
+    const abortController = new AbortController();
+    const signal = abortController.signal
     let uuid = (window.location.pathname).slice(11)
-    // console.log(uuid);
     let url = "https://gateway.marvel.com:443/v1/public/comics/" + uuid + "?apikey=6ac68c640e567a0be876ac9a65ba411f"
 
-    fetch(url)
+    fetch(url, { signal: signal })
       .then(res => res.json())
       .then(res => {setSingleComic(res.data.results[0]); console.log(singleComic)})
       .then(setIsLoading(false))
