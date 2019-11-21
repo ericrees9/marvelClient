@@ -28,7 +28,7 @@ const ComicPage = (props) => {
 
   return(
     <div className="main">
-      <h1 className="comicTitle">{singleComic.data.results[0].title}</h1>
+      <h1 className="comicTitle">{singleComic.data.results.title}</h1>
       <div className="resultsArea">
         <div className="left">
           <img className="img" src={`${singleComic.data.results[0].images[0].path}.jpg`} />
