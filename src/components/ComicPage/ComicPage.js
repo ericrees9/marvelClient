@@ -16,13 +16,16 @@ const ComicPage = (props) => {
     // return function cleanup() {
     //   abortController.abort()
     // }
+      return function setComic() {
+        setSingleComic(props.location.state.comic);
+      }
   }, [])
   
   console.log(props.location.state.comic);
 
-  const fetchComic = () => {
-    const uuid = (window.location.pathname).slice(11)
-    const url = "https://gateway.marvel.com:443/v1/public/comics/" + uuid + "?apikey=6ac68c640e567a0be876ac9a65ba411f"
+  // const fetchComic = () => {
+  //   const uuid = (window.location.pathname).slice(11)
+  //   const url = "https://gateway.marvel.com:443/v1/public/comics/" + uuid + "?apikey=6ac68c640e567a0be876ac9a65ba411f"
 
     // fetch(url, { signal })
     //   .then(res => {
@@ -41,8 +44,8 @@ const ComicPage = (props) => {
   // }
   return (
       <div className="main">
-        {console.log(singleComic)}
-        {/* <h1 className="comicTitle">{singleComic.title}</h1>
+        {/* {console.log(singleComic)} */}
+        <h1 className="comicTitle">{singleComic.title}</h1>
         <div className="resultsArea">
           <div className="left">
             <img className="img" src={`${singleComic.images[0].path}.jpg`} />
@@ -90,7 +93,7 @@ const ComicPage = (props) => {
               </ListGroupItem>
             </ListGroup>
           </div>
-        </div> */}
+        </div>
       </div>
   );
 };

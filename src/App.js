@@ -57,7 +57,7 @@ function App() {
           </div>
         </div>
         </Route>
-        <Route path="/comicpage" component={ComicPage} render={routerProps => (<ComicPage {...routerProps}/> )}/>
+        <Route path="/comicpage" component={ComicPage} render={routerProps => (<ComicPage {...routerProps}/>)}/>
     </Switch>
     </Router>
   );
