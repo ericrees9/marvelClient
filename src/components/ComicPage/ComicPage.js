@@ -25,6 +25,7 @@ const ComicPage = (props) => {
       .catch(err => console.error({ message: err })) 
     // setSingleComic(IndvTestData.data.results)
     // console.log(IndvTestData.data.results[0].images[0])
+    console.log(singleComic.images);
   }
 
   return isLoading ? <div>Loading</div> : (
