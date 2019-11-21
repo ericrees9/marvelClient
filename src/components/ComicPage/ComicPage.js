@@ -18,11 +18,11 @@ const ComicPage = (props) => {
     // console.log(uuid);
     let url = "https://gateway.marvel.com:443/v1/public/comics/" + uuid + "?apikey=6ac68c640e567a0be876ac9a65ba411f"
 
-    // fetch(url)
-    //   .then(res => res.json())
-    //   .then(res => {setSingleComic(res); console.log(res)})
-    //   .catch(err => console.error({ message: err })) 
-    setSingleComic(IndvTestData.data.results)
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {setSingleComic(res); console.log(res)})
+      .catch(err => console.error({ message: err })) 
+    // setSingleComic(IndvTestData.data.results)
     // console.log(IndvTestData.data.results[0].images[0])
 }
 

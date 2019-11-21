@@ -17,18 +17,18 @@ function App() {
   const [search, setSearch] = useState("");
   const [comics, setComics] = useState([]);
 
-  console.log(TestData);
+  // console.log(TestData);
   
   const Excelsior = (e) => {
-    // e.preventDefault();
-    // let url = `${baseURL}comics?title=${search}&apikey=${APIKey}`;
+    e.preventDefault();
+    let url = `${baseURL}comics?title=${search}&apikey=${APIKey}`;
     // console.log(search)
   
-    // fetch(url)
-    //   .then(res => res.json())
-    //   .then(res => {setComics(res.data.results); console.log(res)})
-    //   .catch(err => console.error({ message: err }))
-    setComics(TestData.data.results);
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {setComics(res.data.results); console.log(res)})
+      .catch(err => console.error({ message: err }))
+    // setComics(TestData.data.results);
   }
 
   return (
