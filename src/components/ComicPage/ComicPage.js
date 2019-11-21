@@ -8,6 +8,8 @@ import moment from 'moment';
 const ComicPage = (props) => {
   const [ singleComic, setSingleComic ] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true);
+  const abortController = new AbortController();
+  const signal = abortController.signal
 
   useEffect(() => {
     fetchComic();
@@ -17,8 +19,6 @@ const ComicPage = (props) => {
   }, [])
   
   const fetchComic = () => {
-    const abortController = new AbortController();
-    const signal = abortController.signal
     let uuid = (window.location.pathname).slice(11)
     let url = "https://gateway.marvel.com:443/v1/public/comics/" + uuid + "?apikey=6ac68c640e567a0be876ac9a65ba411f"
 
