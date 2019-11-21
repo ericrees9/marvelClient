@@ -8,35 +8,37 @@ import moment from 'moment';
 const ComicPage = (props) => {
   const [ singleComic, setSingleComic ] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true);
-  const abortController = new AbortController();
-  const signal = abortController.signal
+  // const abortController = new AbortController();
+  // const signal = abortController.signal
 
   useEffect(() => {
-    fetchComic();
-    return function cleanup() {
-      abortController.abort()
-    }
+    // fetchComic();
+    // return function cleanup() {
+    //   abortController.abort()
+    // }
   }, [])
   
+  console.log(props.location.state);
+
   const fetchComic = () => {
     const uuid = (window.location.pathname).slice(11)
     const url = "https://gateway.marvel.com:443/v1/public/comics/" + uuid + "?apikey=6ac68c640e567a0be876ac9a65ba411f"
 
-    fetch(url, { signal })
-      .then(res => {
-         res.json();
-         setSingleComic(res.data.results[0]);
-         console.log(res);
-         setIsLoading(false)
-      })
-      .catch(err => console.error({ message: err })) 
+    // fetch(url, { signal })
+    //   .then(res => {
+    //      res.json();
+    //      setSingleComic(res.data.results[0]);
+    //      console.log(res);
+    //      setIsLoading(false)
+    //   })
+    //   .catch(err => console.error({ message: err })) 
     // setSingleComic(IndvTestData.data.results)
     // console.log(IndvTestData.data.results[0].images[0])
   }
 
-  if (isLoading) {
-    return ( <div>Loading...</div> );
-  }
+  // if (isLoading) {
+  //   return ( <div>Loading...</div> );
+  // }
   return (
       <div className="main">
         {console.log(singleComic)}
