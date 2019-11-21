@@ -7,10 +7,9 @@ import moment from 'moment';
 
 const ComicPage = (props) => {
   const [ singleComic, setSingleComic ] = useState({});
-  const [ isLoading, setIsLoading ] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true)
     fetchComic();
   }, [])
   
