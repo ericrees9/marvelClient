@@ -82,9 +82,9 @@ const ComicPage = (props) => {
               <ListGroupItem>
                 <ListGroupItemHeading><a target="_blank" href={`${comic.urls[0].url}`}>More Details</a></ListGroupItemHeading>
               </ListGroupItem>
-              <ListGroupItem>
+              {`${comic.urls[1].url}` === null ? null : <ListGroupItem>
                 <ListGroupItemHeading><a target="_blank" href={`${comic.urls[1].url}`}>Buy Now</a></ListGroupItemHeading>
-              </ListGroupItem>
+              </ListGroupItem>}
               <ListGroupItem>
                 <ListGroupItemHeading><Link to="/">Back to Search</Link></ListGroupItemHeading>
               </ListGroupItem>
